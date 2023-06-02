@@ -1,4 +1,5 @@
 
+
 ### 키워드 검색 빈도별 데이터 분석
 
 # -----------------------------------
@@ -11,8 +12,9 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 from matplotlib import rcParams
+from PIL import Image
 
-# 그래프의 한글이 깨져서 복붙해옴-- 여전히 깨지는데...??
+# 그래프의 한글이 깨져서 복붙해옴-- 여전히 깨지는데...?? ==>> 해결 : 메인에서 폰트 설치
 import platform
 from matplotlib import font_manager, rc
 plt.rcParams['axes.unicode_minus'] = False
@@ -21,45 +23,35 @@ if platform.system() == 'Linux':
 # ------------------------------------
 
 
-
-from PIL import Image
-# -----------------------------------
-
-
 # -------------화면 배치 기획 --------------
 
-# 도서 키워드 검색
-#### 이곳에서 키워드의 여러 데이터 분석을 보실 수 있습니다.
-
-## 데이터 프레임 보기
-## 연간 키워드 검색 순위
-## 키워드 검색 빈도
-## 키워드 검색 빈도수가 1000건 이상인 데이터
-
+# 키워드 검색 수 차트
+# 인기 검색 키워드
 
 # ------------------------------------------
 
 
+#### 만약 컬럼이 알아보기 어렵다면 컬럼 설명을 붙여주도록 하자
+
+
+
 def run_app_keyword():
+
+    img = Image.open('data/library2-1.PNG')
+    st.image(img)
+
+
     st.title('도서 키워드 검색')
 
-    st.subheader('키워드 검색 빈도수 별 데이터')
-
-
-
-    st.markdown('#### 기본데이터')
+    # st.markdown('#### 기본데이터')
     df = pd.read_csv('data/NL_AGE_ACCTO_BOOK_KWRD_LIST_202112.csv')
 
-    ### 1. 
-    st.text('원본 데이터를 확인하고싶다면 체크박스에 클릭 해 주세요')
-    if st.checkbox('데이터프레임 보기') :
-        st.dataframe( df )
-
-
-
+    # ### 1. 
+    # st.text('원본 데이터를 확인하고싶다면 체크박스에 클릭 해 주세요')
+    # if st.checkbox('데이터프레임 보기') :
+    #     st.dataframe( df )
 
     ### 2.
-    st.markdown('#### 검색 빈도가 가장 많은 키워드')
         # 검색 빈도가 가장 많은 키워드를 보여주고싶은데
         # 유저가 원하는 랭크만큼 보여주고싶을떄
         # 숫자를 선택하면
@@ -74,14 +66,15 @@ def run_app_keyword():
     keyword_groupby = (df2.groupby('키워드')['검색 수'].sum()).sort_values(ascending = False)
     keyword_groupby = pd.DataFrame(keyword_groupby).reset_index()
 
+    
+    # 키워드 랭킹을 화면에 보여주기
+    # 키워드 랭킹 데이터프레임 보여주기
+    # 라인플롯 그래프 보여주기
+    # 그래프는 그냥 띄워놓고 키워드 랭킹도 그냥 띄워놓고
+    # 랭킹은 1,5,10,20 선택 가능하도록 만들기
+    
 
-    
-        # 키워드 랭킹을 화면에 보여주기
-        # 키워드 랭킹 데이터프레임 보여주기
-        # 라인플롯 그래프 보여주기
-        # 그래프는 그냥 띄워놓고 키워드 랭킹도 그냥 띄워놓고
-        # 랭킹은 1,5,10,20 선택 가능하도록 만들기
-    
+    st.subheader('키워드 검색 수 차트')
     fig = plt.figure()
     kwrd_rank = df2.loc[ : , : ].sort_values('검색 수', ascending = False)
     sns.lineplot(data = kwrd_rank.head(30), 
@@ -91,10 +84,11 @@ def run_app_keyword():
     plt.ylabel('검색 수')
     st.pyplot(fig)
 
-
-    num = [1,5,10,20]
+    st.subheader('키워드 검색 수 표로 보기')
+    num = [1,5,10,20, 30]
     group_rank = st.selectbox('원하는 순위까지 숫자를 선택 해 주세요', num)
     st.dataframe( keyword_groupby.head(int(group_rank)) )
+
 
     
 
@@ -102,7 +96,7 @@ def run_app_keyword():
 
 
     ### 3.
-    st.markdown('#### 인기 검색 데이터')
+    st.subheader('인기 검색 키워드')
 
     # 인기 검색 데이터 가져오기 ----------
     df1['FQ_CO']

@@ -1,4 +1,5 @@
 
+
 ### 연령대별 데이터분석
 
 # -----------------------------------
@@ -30,22 +31,26 @@ from PIL import Image
 # ------------------------------------------
 
 
+#### 만약 컬럼이 알아보기 어렵다면 컬럼 설명을 붙여주도록 하자
+
+
 
 def run_app_age():
+
+    
+    img = Image.open('data/library2-1.PNG')
+    st.image(img)
+
+
     st.title('도서 키워드 검색')
-
-    st.subheader('연령대별 데이터')
-
-
 
 
     ### 1.
-    st.markdown('#### 기본데이터')
+    # st.markdown('#### 기본데이터')
     df = pd.read_csv('data/NL_AGE_ACCTO_BOOK_KWRD_LIST_202112.csv')
-    st.text('')
-    if st.checkbox('데이터프레임 보기') :
-        st.dataframe( df )
-
+    # st.text('')
+    # if st.checkbox('데이터프레임 보기') :
+    #     st.dataframe( df )
 
 
 
@@ -58,9 +63,8 @@ def run_app_age():
 
 
 
-
     ### 2.
-    st.markdown('#### 연령대 별 인기 키워드')
+    st.subheader('연령대 별 인기 키워드')
     st.text('연령대 별 인기 키워드를 보여드립니다')
 
     age_list = ['20대', '30대', '40대', '50대', '60대 이상', '영유아(0~5)', 
@@ -80,7 +84,7 @@ def run_app_age():
 
 
     ### 3. 
-    st.markdown('#### 이 키워드를 가장 많이 선택한 연령대는?')
+    st.subheader('이 키워드를 가장 많이 선택한 연령대는?')
     st.text('내가 선택한 키워드를 가장 많이 검색한 연령대를 알려드립니다')
 
     # 키워드를 리스트로 만든 데이터
