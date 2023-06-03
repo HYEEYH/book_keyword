@@ -35,7 +35,8 @@ def main():
 
     menu = ['Home', '키워드', '연령대' ]
     st.sidebar.image('data/books_12.png', width=200)
-    choice = st.sidebar.selectbox('메뉴', menu)
+    st.sidebar.title('메뉴')
+    choice = st.sidebar.selectbox('가고싶은 페이지를 선택하세요', menu)
 
 
     if choice == menu[0] :
