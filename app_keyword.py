@@ -41,7 +41,7 @@ def run_app_keyword():
     st.image(img)
 
 
-    st.title('도서 키워드 검색')
+    st.title('🌸도서 키워드 검색🌸')
 
     # st.markdown('#### 기본데이터')
     df = pd.read_csv('data/NL_AGE_ACCTO_BOOK_KWRD_LIST_202112.csv')
