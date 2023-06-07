@@ -10,8 +10,7 @@ import pandas as pd
 from PIL import Image
 
 ## 화면 레이아웃 구성 라이브러리
-from tkinter.tix import COLUMN
-from pyparsing import empty
+
 # -----------------------------------
 
 
