@@ -74,15 +74,15 @@ def run_app_keyword():
     # 랭킹은 1,5,10,20 선택 가능하도록 만들기
     
 
-    st.subheader('키워드 검색 수 차트')
-    fig = plt.figure()
-    kwrd_rank = df2.loc[ : , : ].sort_values('검색 수', ascending = False)
-    sns.lineplot(data = kwrd_rank.head(30), 
-             x = '키워드', y = '검색 수', hue = '연령대', style = '연령대')
-    plt.title('키워드 검색 수')
-    plt.xlabel('키워드')
-    plt.ylabel('검색 수')
-    st.pyplot(fig)
+    # st.subheader('키워드 검색 수 차트')
+    # fig = plt.figure()
+    # kwrd_rank = df2.loc[ : , : ].sort_values('검색 수', ascending = False)
+    # sns.lineplot(data = kwrd_rank.head(30), 
+    #          x = '키워드', y = '검색 수', hue = '연령대', style = '연령대')
+    # plt.title('키워드 검색 수')
+    # plt.xlabel('키워드')
+    # plt.ylabel('검색 수')
+    # st.pyplot(fig)
 
     st.subheader('키워드 검색 수 표로 보기')
     num = [1,5,10,20, 30]
