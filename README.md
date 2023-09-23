@@ -8,9 +8,9 @@
 - 내가 검색한 키워드를 어떤 연령대가 가장 많이 검색했는지 알려줄 수 있는 앱 대시보드
 - 검색 빈도가 높은 인기 키워드를 가장 높은 순서부터 보여줌.
 - 나이대별로 가장 검색이 많았던 키워드를 보여줌.
-<a href= "https://drive.google.com/file/d/1bB3lG-ItFfgfPVFq5QEewgbJ82xf6GGP/view?usp=drive_link">[시연 영상 보러 가기]</a><br/>
+<br/>
+<a href= "https://drive.google.com/file/d/1bB3lG-ItFfgfPVFq5QEewgbJ82xf6GGP/view?usp=drive_link">[시연 영상 보러 가기]</a><br/><br/>
 <img src="https://github.com/HYEEYH/aws-rekognition-app2/assets/130967557/486a902c-5c7f-46de-b0c0-da62bfe420a9"  width="700" height="668" /><br/><br/>
-
 ## 사용 툴
 <div align=center>
 <img src="https://img.shields.io/badge/Visual Studio Code-007ACC?style=flat&logo=visualstudiocode&logoColor=white"/>
