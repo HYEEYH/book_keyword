@@ -1,9 +1,8 @@
 ![header](https://capsule-render.vercel.app/api?type=waving&color=auto&height=200&section=header&text=Book%20Keyword&fontSize=70)
 
 # book_keyword
-개인프로젝트1 - 책 키워드 분석 앱 대시보드
-<br/><br/><br/>
-
+개인프로젝트 - 책 키워드 분석 앱 대시보드
+<br/><br/>
 * 어떤 책 키워드가 가장 검색이 많았는지, 연령대 별로 책 인기 키워드는 어떻게 다른지 보여주는 앱 대시보드 입니다.<br/>
 - 내가 검색한 키워드를 어떤 연령대가 가장 많이 검색했는지 알려줄 수 있는 앱 대시보드
 - 검색 빈도가 높은 인기 키워드를 가장 높은 순서부터 보여줌.
