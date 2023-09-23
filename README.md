@@ -10,6 +10,7 @@
 <br/>
 <a href= "https://drive.google.com/file/d/1bB3lG-ItFfgfPVFq5QEewgbJ82xf6GGP/view?usp=drive_link">[시연 영상 보러 가기]</a><br/><br/>
 <img src="https://github.com/HYEEYH/aws-rekognition-app2/assets/130967557/486a902c-5c7f-46de-b0c0-da62bfe420a9"  width="700" height="668" /><br/><br/>
+
 ## 사용 툴
 <div align=center>
 <img src="https://img.shields.io/badge/Visual Studio Code-007ACC?style=flat&logo=visualstudiocode&logoColor=white"/>
